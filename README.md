@@ -50,12 +50,16 @@ I found Linux had problems finding Java or finding the wrong Java. I added an ad
 ##	WARNING
 Directories must not contain spaces.
 Create symbolic links if needed (Windows too).
+```
 	For Example:
 		cd	C:\Users\bmoore
 		mklink /D MyProjects "C:\Users\bmoore\My Projects"
+```		
 http://en.wikipedia.org/wiki/NTFS_symbolic_link
 http://en.wikipedia.org/wiki/Symbolic_link
 
 The relative locations are built by invocation path, so to work properly, I do something like this:
+```
 	cd	C:\Users\bmoore\MyProjects\{sProjectName}_app\src\{sProjectName}
 	ant
+```
