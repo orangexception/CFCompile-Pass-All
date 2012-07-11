@@ -33,29 +33,29 @@ Most of this documentation comes from my Ant build. If you're unfamiliar with it
 
 
 ##	TO RUN
-	Place build.xml inside {sProjectName}_app/src/{sProjectName}
+Place build.xml inside {sProjectName}_app/src/{sProjectName}
 
 ##	TO DEBUG
-	Run	`ant getProperties` to verify file paths.
+Run	`ant getProperties` to verify file paths.
 
 
 ##	CFIDE Special Note
-	There's a section in makeWAR to includes or excludes the CFIDE. I've left it include for this example. I like to run internet facing apps with the CFIDE excluded.
+There's a section in makeWAR to includes or excludes the CFIDE. I've left it include for this example. I like to run internet facing apps with the CFIDE excluded.
 
 
 ##	LINUX Special Note
-	I found Linux had problems finding Java or finding the wrong Java. I added an additional parameter to cfcompile-pass-all to override the Java path used. This works better if you find the Java path you want to use and set the {sJavaPath} property.
+I found Linux had problems finding Java or finding the wrong Java. I added an additional parameter to cfcompile-pass-all to override the Java path used. This works better if you find the Java path you want to use and set the {sJavaPath} property.
 
 
 ##	WARNING
-	Directories must not contain spaces.
-	Create symbolic links if needed (Windows too).
-		For Example:
-			cd	C:\Users\bmoore
-			mklink /D MyProjects "C:\Users\bmoore\My Projects"
-	http://en.wikipedia.org/wiki/NTFS_symbolic_link
-	http://en.wikipedia.org/wiki/Symbolic_link
+Directories must not contain spaces.
+Create symbolic links if needed (Windows too).
+	For Example:
+		cd	C:\Users\bmoore
+		mklink /D MyProjects "C:\Users\bmoore\My Projects"
+http://en.wikipedia.org/wiki/NTFS_symbolic_link
+http://en.wikipedia.org/wiki/Symbolic_link
 
-	The relative locations are built by invocation path, so to work properly, I do something like this:
+The relative locations are built by invocation path, so to work properly, I do something like this:
 	cd	C:\Users\bmoore\MyProjects\{sProjectName}_app\src\{sProjectName}
 	ant
