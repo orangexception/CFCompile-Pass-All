@@ -1,3 +1,8 @@
+#  Bradley Wayne Moore
+#	bwmoore@orangexception.com
+#	orangexception.com
+#	@orangexception
+
 echo	".,;:=/|\=:;,."
 echo	"  cfcompile  "
 echo	".,;:=/|\=:;,."
@@ -32,26 +37,16 @@ echo	"APP:" $APP
 echo	"APP_COMPILED:" $APP_COMPILED
 echo	"JAVA_HOME:" $JAVA_HOME
 
-
-#	Find Java
-echo	".,;:=/|\=:;,."
-echo	"  Find Java  "
-echo	".,;:=/|\=:;,."
-echo	".,;:=/|\=:;,."
-. $CFUSION_HOME/bin/findjava.sh
-
-
 #	Compile ColdFusion into Java ByteCode
 echo	".,;:=/|\=:;,."
 echo	"   Compile   "
 echo	".,;:=/|\=:;,."
 echo	".,;:=/|\=:;,."
+_JAVACMD=$JAVA_HOME
 ${_JAVACMD} -cp "$J2EEJAR:$WEBINF/lib/cfmx_bootstrap.jar:$WEBINF/lib/cfx.jar" -Dcoldfusion.classPath=$CFUSION_HOME/lib/updates,$CFUSION_HOME/lib -Dcoldfusion.libPath=$CFUSION_HOME/lib coldfusion.tools.CommandLineInvoker Compiler -deploy -webinf $WEBINF -webroot $WWWROOT -cfroot $CFUSION_HOME -srcdir $APP -deploydir $APP_COMPILED
 
-
 echo	".,;:=/|\=:;,."
 echo	".,;:=/|\=:;,."
 echo	".,;:=/|\=:;,."
-
 
 exit 0
